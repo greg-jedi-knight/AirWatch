@@ -1,0 +1,44 @@
+{% extends 'common/base.html' %}
+{% block title %} AirWatch - Home {% endblock %}
+{% block content %}
+{% load static %}		
+<div class='bg-image'>
+	<div class='p-3 bg-text font-weight-bold'>
+		<h1><a href='{% url "main-page" %}' class='logo'>AirWatch</a></h1>
+		<div class="row d-flex justify-content-center align-items-center h-100 mt-5">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class='card shadow'>
+					<div class="card-body p-5">
+						<h3 class="fw-bold mb-2 text-black">Sign Up</h3>
+						<form class='mt-4' method="post">
+							{% csrf_token %}
+							<input type="email" name="email" id="inputEmail" class="form-control mt-3"
+							placeholder="Email address" required autofocus>
+							<input type="text" name="username" id="inputUsername" class="form-control mt-3" placeholder="Username" required>
+							<input type="password" name="password1" id="inputPassword1" class="form-control mt-3" placeholder="Password" required>
+							<input type="password" name="password2" id="inputPassword2" class="form-control mt-3"
+							 placeholder="Confirm password" required>
+							{% for field in signup_form %}
+							<p>
+							{% for error in field.errors %}
+							<p class='text-danger'>{{ error }}</p>
+							{% endfor %}
+							</p>
+							{% endfor %}
+							{% if registration_form.non_field_errors %}
+							<div class='text-danger'>
+								<p>{{registration_form.non_field_errors}}</p>
+							</div>
+
+							{% endif %}
+							<div class='text-center'>
+								<button class="btn btn-lg btn-navy btn-block mt-3" type="submit">Continue</button>	
+							</div>	
+						</form>	
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+	</div>	
+</div>	
+{% endblock %}

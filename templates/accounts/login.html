@@ -1,0 +1,39 @@
+{% extends 'common/base.html' %}
+{% block title %} AirWatch - Home {% endblock %}
+{% block content %}
+{% load static %}		
+<div class='bg-image'>
+	<div class='p-3 bg-text font-weight-bold'>
+		<h1><a href='{% url "main-page" %}' class='logo'>AirWatch</a></h1>
+		<div class="row d-flex justify-content-center align-items-center h-100 mt-5">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class='card shadow'>
+					<div class="card-body p-5">
+						<h3 class="fw-bold mb-2 text-black">Sign In</h3>
+						<form class='mt-4' method='POST'>
+							{% csrf_token %}
+							<input type="text" id="inputEmail" name='email' class="form-control" placeholder="Email" autofocus required>
+							<div class='input-group mt-3 mb-4'>
+								<input type="password" id="inputPassword" name='password' class="form-control" placeholder="Hasło" required>
+							</div>
+							{% for field in login_form %}	
+							<p>
+							{% for error in field.errors %}
+								<p class='text-danger'>{{ error }}</p>
+							{% endfor %}
+							</p>
+							{% endfor %}
+							{% if login_form.non_field_errors %}
+							<div class='text-danger'>
+								<p>{{login_form.non_field_errors}}</p>
+							</div>
+							{% endif %}
+							<button class="btn btn-navy w-100" type="submit" value="Login">Login</button>
+						</form>	
+					</div>	
+				</div>
+			</div>	
+		</div>		
+	</div>	
+</div>	
+{% endblock %}

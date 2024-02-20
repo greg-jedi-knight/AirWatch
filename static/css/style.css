@@ -1,0 +1,75 @@
+body, html {
+	height: 100%;
+	font-family: sans-serif;
+	background-color: #3b3b3b;
+}
+
+.bg-image {
+	background-image: url('/static/img/background.jpg');
+	height: 100%;
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+.bg-text {
+	color: white;
+}
+
+.btn-login {
+	border: 2px solid white;
+	border-radius: 20px;
+	color: white;
+}
+
+.btn-signup {
+	margin-left: 20px;
+	background-color: darkblue;
+	border-radius: 20px;
+	color: white;
+}
+
+.text-black {
+	color: black;
+}
+
+.btn-navy {
+	background-color: darkblue;
+	border-radius: 20px;
+	color: white;
+}
+
+.btn-purple {
+	margin-left: 20px;
+	background-color: #301e5d;
+	border-radius: 5px;
+	color: white;
+	margin-left: auto;
+}
+
+.logo {
+	color: white;
+	text-decoration: none;
+}
+
+.logo:hover {
+	color: white;
+}
+
+.bg-purple {
+	background-color: #383366;
+}
+
+.border-gray {
+	border: 1px solid darkgray;
+	border-radius: 5px;
+}
+
+.hr {
+	width: 100%;
+	border-top: 1px solid darkgray;
+}
+
+.bg-gray {
+	background-color: #333333;
+}

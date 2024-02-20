@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+{% block title %} AirWatch - Home {% endblock %}
+{% block content %}
+{% load static %}		
+<div class='bg-image'>
+	<div class='p-3 bg-text font-weight-bold'>
+		<h1><a href='{% url "main-page" %}' class='logo'>AirWatch</a></h1>
+		<div class='text-center mt-5'>
+			<h3 class='pt-4'>Satellite Insights for Clean Air – Analyse, Compare, Breathe Easy!</h3>
+			<div class='d-flex justify-content-center mt-5'>
+				<a class='btn btn-login px-4 shadow' href='{% url "accounts:login" %}'>Sign In</a>
+				<a class='btn btn-signup px-4 pt-2 shadow' href='{% url "accounts:signup" %}'>Get Started</a>
+			</div>
+			<h4 class='pt-4 mt-5'>Powered by Sentinel-5P data</h4>	
+		</div>		
+	</div>	
+</div>	
+{% endblock %}

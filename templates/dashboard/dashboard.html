@@ -1,0 +1,33 @@
+{% extends 'common/base.html' %}
+{% block title %} AirWatch - Start {% endblock %}
+{% block content %}
+{% include 'common/nav.html' %}
+<div class='container'>
+	<div class='row mt-3'>
+		<div class='col-lg-4 col-md-6 col-sm-12'>
+			<div class='card shadow border-0'>
+				<div class='card-header bg-purple'>
+					<div class='d-flex pt-2'>
+						<h4 class='text-white-50 pr-4'>My Projects</h4>
+						<a class='btn btn-purple shadow' href='#'>New Project +</a>
+					</div>
+				</div>
+				<div class='card-body bg-gray'>
+					{% for project in request.user.projects %}
+					{% empty %}
+					<div class='text-white-50'>
+						You have no current projects
+					</div>	
+					{% endfor %}
+				</div>	
+			</div>		
+		</div>
+		<div class='col-lg-4 col-md-6 col-sm-12'>
+			asdf
+		</div>
+		<div class='col-lg-4 col-md-6 col-sm-12'>
+			asdf
+		</div>	
+	</div>	
+</div>
+{% endblock %}
