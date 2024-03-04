@@ -118,8 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 SENTINEL_CLIENT_ID = env('SENTINEL_CLIENT_ID')
 SENTINEL_CLIENT_SECRET = env('SENTINEL_CLIENT_SECRET')
-SENTINEL_TOKEN_URL = 'https://services.sentinel-hub.com/auth/realms/main/protocol/openid-connect/token'
-SENTINEL_PROCESS_URL = 'https://creodias.sentinel-hub.com/api/v1/process'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

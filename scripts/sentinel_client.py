@@ -1,3 +1,5 @@
+from django.conf import settings
+
 from sentinelhub import (
   BBox,
   CRS,
@@ -66,8 +68,8 @@ class SentinelClient:
     return request.get_data()
 
 def run():
-  client_id = 'd1e2eebf-0e43-40f2-a64b-ceca033f679c'
-  client_secret = 'F41cuO5xBkxrXasa3EZc2Ykv79Nxa6X5'
+  client_id = settings.SENTINEL_CLIENT_ID
+  client_secret = settings.SENTINEL_CLIENT_SECRET
   time_from = '2024-02-17'
   time_to = '2024-02-18'
   coordinates = (113.8259, 22.1435, 114.4529, 22.561949)
