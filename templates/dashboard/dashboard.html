@@ -8,12 +8,13 @@
 			<div class='card shadow border-0'>
 				<div class='card-header bg-purple'>
 					<div class='d-flex pt-2'>
-						<h4 class='text-white-50 pr-4'>My Projects</h4>
+						<h4 class='text-white pr-4'>My Projects</h4>
 						<a class='btn btn-purple shadow' href='#'>New Project +</a>
 					</div>
 				</div>
 				<div class='card-body bg-gray'>
-					{% for project in request.user.projects %}
+					{% for project in projects %}
+					<a href='#'>{{ project.name }}</a>
 					{% empty %}
 					<div class='text-white-50'>
 						You have no current projects
